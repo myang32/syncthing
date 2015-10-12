@@ -10,6 +10,8 @@ Add-Type -assembly "system.io.compression.filesystem"
 [io.compression.zipfile]::ExtractToDirectory("C:\SourceCode\NSIS_Simple_Service_Plugin_1.30.zip", "C:\SourceCode")
 
 Copy-Item "C:\SourceCode\SimpleSC.dll" "$nsis_dir\SimpleSC.dll"
+Write-Host "Contents of C:\Program Files (x86)\NSIS\Plugins\*.dll"
+dir "C:\Program Files (x86)\NSIS\Plugins\*.dll"
 
 wget "https://github.com/kohsuke/winsw/releases/download/1.17-beta.2/winsw.exe" -OutFile "$dir\syncthingservice.exe"
 
