@@ -11,4 +11,7 @@ build_script:
 test_script:
 - go run build.go test
 artifacts:
-- path: '*.zip' 'SyncThingSetup.exe'
+- path: '*.zip'
+  name: ZIP
+- path: '**\SyncThingSetup.exe'
+  name: Installer
