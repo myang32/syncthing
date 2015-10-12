@@ -5,11 +5,11 @@ New-Item -Path $dir -Type Directory
 
 $nsis_dir = "C:\Program Files (x86)\NSIS"
 
-wget "http://nsis.sourceforge.net/mediawiki/images/c/c9/NSIS_Simple_Service_Plugin_1.30.zip" -OutFile "NSIS_Simple_Service_Plugin_1.30.zip"
+wget "http://nsis.sourceforge.net/mediawiki/images/c/c9/NSIS_Simple_Service_Plugin_1.30.zip" -OutFile "C:\SourceCode\NSIS_Simple_Service_Plugin_1.30.zip"
 Add-Type -assembly "system.io.compression.filesystem"
-[io.compression.zipfile]::ExtractToDirectory("NSIS_Simple_Service_Plugin_1.30.zip", "C:\temp")
+[io.compression.zipfile]::ExtractToDirectory("C:\SourceCode\NSIS_Simple_Service_Plugin_1.30.zip", "C:\SourceCode")
 
-Copy-Item "C:\temp\SimpleSC.dll" "$nsis_dir\SimpleSC.dll"
+Copy-Item "C:\SourceCode\SimpleSC.dll" "$nsis_dir\SimpleSC.dll"
 
 wget "https://github.com/kohsuke/winsw/releases/download/1.17-beta.2/winsw.exe" -OutFile "$dir\syncthingservice.exe"
 
