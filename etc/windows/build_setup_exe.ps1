@@ -28,10 +28,15 @@ wget http://docs.syncthing.net/pdf/Getting-Started.pdf -OutFile "$dir\Getting-St
 Copy-Item etc\windows\syncthingservice.xml -destination "$dir\syncthingservice.xml"
 Copy-Item syncthing.exe -destination "$dir\syncthing.exe"
 
+Write-Host "Building syncthing-cli"
+go get github.com/syncthing/syncthing-cli
+
+Copy-Item "$env:GOPATH\bin\syncthing-cli.exe" -destination "$dir\syncthing-cli.exe"
+
 $env:PATH += ";$nsis_dir"
 
 Write-Host "Building Setup with NSIS"
-. makensis "etc\windows\SyncThingSetup.nsi"
+makensis "etc\windows\SyncThingSetup.nsi"
 
 Write-Host "Contents of $dir"
 Dir $dir
