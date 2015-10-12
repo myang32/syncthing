@@ -12,4 +12,6 @@ wget http://docs.syncthing.net/pdf/Getting-Started.pdf -OutFile "$dir\Getting-St
 
 Copy-Item etc\windows\syncthingservice.xml -destination "$dir\syncthingservice.xml"
 
+$env:PATH += ";C:\Program Files (x86)\NSIS\"
+
 . nsis "etc\windows\SyncThingSetup.nsi"
