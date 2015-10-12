@@ -2,10 +2,12 @@ version: '{branch}-{build}'
 clone_folder: C:\src\github.com\syncthing\syncthing
 init:
 - go version
+- ps: choco install -y nsis
 environment:
   GOPATH: C:\
 build_script:
 - go run build.go zip
+- ps: etc\windows\build_setup_exe.ps1
 test_script:
 - go run build.go test
 artifacts:
