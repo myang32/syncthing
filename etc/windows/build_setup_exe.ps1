@@ -1,3 +1,5 @@
+$ErrorActionPreference = "Stop"
+
 $dir = "C:\SourceCode\SyncThing\Binaries"
 New-Item -Path $dir -Type Directory
 
