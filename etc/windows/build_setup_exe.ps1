@@ -17,3 +17,6 @@ Copy-Item etc\windows\syncthingservice.xml -destination "$dir\syncthingservice.x
 $env:PATH += ";C:\Program Files (x86)\NSIS\"
 
 . nsis "etc\windows\SyncThingSetup.nsi"
+
+Write-Host "Contents of $dir"
+Dir $dir
